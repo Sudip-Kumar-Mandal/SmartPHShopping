@@ -1,4 +1,4 @@
-namespace SmartPHShppingWeb.Models
+namespace SmartPHShoppingWeb.Models
 {
     public class ErrorViewModel
     {

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34408.163
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartPHShppingWeb", "SmartPHShppingWeb\SmartPHShppingWeb.csproj", "{1B4B2A6E-9A9E-474A-B3A2-0AA3AB3A6377}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartPHShoppingWeb", "SmartPHShppingWeb\SmartPHShoppingWeb.csproj", "{1B4B2A6E-9A9E-474A-B3A2-0AA3AB3A6377}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
