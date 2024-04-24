@@ -23,6 +23,23 @@ namespace SmartPHShoppingWeb.Areas.Customer.Controllers
             return View(productList);
         }
 
+        public IActionResult Details(int id)
+        {
+            Product product = _unitOfWork.Product.Get(u => u.Id == id, includeProperties: "Category");
+            return View(product);
+        }
+
+        [HttpPost]
+        public IActionResult Details()
+        {
+            return RedirectToAction("Bought");
+        }
+
+        public IActionResult Bought()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();

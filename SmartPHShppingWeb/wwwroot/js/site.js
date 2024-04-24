@@ -39,6 +39,14 @@ function gotoView(viewName, linkId) {
     link.click();
 }
 
+function clickButton(productName) {
+    const sentence = `${productName} selected`;
+    speak(sentence);
+    const link = document.querySelector('#details-button-' + productName);
+    link.click();
+}
+
+
 function speakThis(message) {
 
     if (message.includes('hello') || message.includes('hi')) {
@@ -46,23 +54,28 @@ function speakThis(message) {
         speak(sentence);
     }
 
-    else if (message.includes('go') || message.includes('go to') || message.includes('view')) {
+    else if (message.includes('go') || message.includes('back')) {
         if (message.includes('home')) {
             gotoView('home', '#CustomerHomeIndexView')
-        }
-        else if (message.includes('category')) {
-            gotoView('category', '#AdminCategoryIndexView')
         }
         else if (message.includes('privacy')) {
             gotoView('privacy', '#CustomerHomePrivacyView')
         }
     }
 
-    else if (message.includes('create category')) {
-        const sentence = 'Going to Create Category view';
-        speak(sentence);
-        const link = document.querySelector('#AdminCategoryCreateView');
-        link.click();
+    else if (message.startsWith('select ')) {
+        message = message.replaceAll('select ', '');
+        message = message.replaceAll(' ', '-');
+        clickButton(message);
+    }
+
+    else if (message.includes('buy') || message.includes('order')) {
+        const link = document.querySelector('#buy-button');
+        if (link != null) {
+            const sentence = 'Your order is placed. Thank you for shopping with us.';
+            speak(sentence);
+            link.click();
+        } 
     }
 
     setTimeout(() => {

@@ -14,7 +14,7 @@
                             <p class="text-dark text-opacity-75 text-uppercase">
                                 <span class="text-decoration-line-through">@product.ListPrice</span> @product.Price
                             </p>
-                            <a href="#" class="btn btn-dark">Details</a>
+                            <a id="details-button-@product.Name.ToLower().Replace(' ', '-')" asp-action="Details" asp-route-id="@product.Id" class="btn btn-dark">Details</a>
                         </div>
                     </div>
                 </div>
